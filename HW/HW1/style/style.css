@@ -35,6 +35,12 @@ header {
     text-decoration: none;
     color: black;
     font-weight: 600;
+    margin-right: 2vw;
+}
+form > input {
+    width: 50%;
+    height: 30px;
+    border: 0px;
 }
 #user-image {
     max-height: 80%;
@@ -49,13 +55,11 @@ header {
     width: 25%;
     text-align:center;
 }
-
 .login-input {
     width: 50%;
     height: 30px;
     border: 0;
 }
-
 form > * {
     margin: 5px;
 }

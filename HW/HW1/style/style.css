@@ -11,6 +11,7 @@
     background-color:navy;
     text-align: center;
 }
+
 .flex-element {
     border-radius: 10px;
     background-color: lightgray;
@@ -23,12 +24,3 @@
     text-align:center;
 }
 
-.login-input {
-    width: 50%;
-    height: 30px;
-    border: 0px;
-}
-
-form > * {
-    margin: 5px;
-}

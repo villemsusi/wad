@@ -6,29 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<tr>
-    <textarea rows="4" cols="50" placeholder="Post Body">
-    </textarea>
-</tr>
-<div class="Postlabel" style="width: 20px; float:left; height:10px; margin:20px">
-    <label>Post <br> Body</label>
-</div>
-<br>
-<br>
-<tr>
-</tr>
-<div class="select" style="width: 10px; float:left; height:10px; margin:20px">
-    <label>Select <br> file</label>
-</div>
-<button type="button">Choose file</button>
-<br>
-<br>
-<br>
-<div class="vertical-center" style="width: 60px; float:left; height:10px; margin: 0px">
-    <button>Create post</button>
-</div>
+<div class="flex-container">
+    <div class="labels">
+        <label>Post <br> Body</label><br><br>
+        <div class="textarea">
+            <textarea rows="4" cols="50" placeholder="Post Body">
+            </textarea>
+        </div>
+        <label>Select <br> file</label>
+    </div>
+    <input type="Choosefile" value="Choose file" class="button2"><br>
+    <br><br>
+    <input type="CreatePost" value="Create post" class="button"><br>
 
+</div>
 </body>
 </html>

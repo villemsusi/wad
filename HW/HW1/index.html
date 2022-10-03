@@ -5,41 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="style/style.css">
     <title>Homework 1</title>
 </head>
 <body>
-<header class="header">
-    <ul class="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">addPost</a></li>
-    </ul>
-    <a class="logo" href="#"><img src="res/images/me.png" width="50" height="50" alt="My picture"></a>
-</header>
-<section class="forum">
-    <article class="post1">
-        <p>
-            What room is the lab in?
-        </p>
-    </article>
-    <article class="post2">
-        <p>
-            Helloooo
-        </p>
-    </article>
-    <article class="post3">
-        <img src="pilt_tartust.jpg">
-        <p>Päriis lahe</p>
-    </article>
-    <article class="post4">
-        <p>Tervitan
-        </p>
-    </article>
-    <article class="post5">
-        <p>Genn lahti?</p>
-    </article>
-</section>
-<footer class="footer">
-
-</footer>
+<div class="flex-container">
+    <header class="flex-element">
+        <div id="menu">
+            <a href="#">Home</a>
+        </div>
+        <img src="assets/defaultUser.png" id="user-image" alt="user image">
+    </header>
+    <section class="forum">
+        <article class="post1">
+            <div class = "pic-and-date">
+                <img src="assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+                <b class = "date">Oct 22, 2022</b>
+            </div>
+            <p>
+                What room is the lab in?
+            </p>
+        </article>
+        <article class="post2">
+            <div class="pic-and-date">
+                <img src="assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+                <b class = "date">Oct 22, 2022</b>
+            </div>
+            <p>
+                Helloooo
+            </p>
+        </article>
+        <article class="post3">
+            <div class = "pic-and-date">
+                <img src="assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+                <b class = "date">Oct 22, 2022</b>
+            </div>
+            <img src="pilt_tartust.jpg" alt="pilt-tartust">
+            <p>Päriis lahe</p>
+        </article>
+        <article class="post4">
+            <div class ="pic-and-date">
+                <img src="assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+                <b class = "date">Oct 22, 2022</b>
+            </div>
+            <p>Tervitan
+            </p>
+        </article>
+        <article class="post5">
+            <div class ="pic-and-date">
+                <img src="assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+                <b class = "date">Oct 22, 2022</b>
+            </div>
+            <p>Genn lahti?</p>
+        </article>
+    </section>
+    <footer class="flex-element">
+            <a href="https://github.com/villemsusi/wad/tree/main/HW/HW1">
+                <img src="assets/GitHub-Logo.png" id="github" alt="github-logo">
+            </a>
+    </footer>
+</div>
 </body>
 </html>

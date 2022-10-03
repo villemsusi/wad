@@ -4,15 +4,6 @@ ul {
     list-style: none;
 }
 
-.header {
-    padding-top: .5em;
-    padding-bottom: .5em;
-    border: 1px solid #646174;
-    background-color: rgba(60, 66, 89, 0.5);
-    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
-    width: 100%;
-    border-radius: 5px;
-}
 .nav a {
     padding: 10px 15px;
     text-transform: uppercase;
@@ -21,11 +12,54 @@ ul {
     color: #41494b;
     font-size: .99em;
 }
+
 .forum {
+    overflow: scroll;
     margin: auto;
     width: 50%;
-    border: 3px solid green;
     padding: 10px;
-
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
 }
-.
+
+article {
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 8px
+}
+
+.prof-pic {
+    max-width: 8%;
+    margin-right: 1%;
+}
+
+.pic-and-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px
+}
+
+.forum::-webkit-scrollbar {
+    display: none;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    margin-top: 2vh;
+    margin-bottom: 0.1vh;
+}
+
+#github {
+    height: 100%;
+    width: auto;
+}
+
+footer > a {
+    height: 80%;
+}

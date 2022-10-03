@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
+<div class="flex-container">
+    <div id="login-box" class="flex-element">
+        <b>Welcome to PostIt</b><br><br>
+        <a href="#">Create an account</a><br>
+        <p>or<br>Please log in</p><br>
+        <form method="POST" action="index.html">
+            <input type="email" placeholder="Email" class="login-input" required><br>
+            <input type="password" placeholder="Password" class="login-input" required><br>
+            <input type="submit" value="Log in" class="button"><br>
+            <a href="#">Forget password</a><br>
+        </form>
+    </div>
+</div>
 </body>
 </html>

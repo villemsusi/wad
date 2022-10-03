@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     font-size:18px;
-    font-family: Arial;
+    font-family: Arial, serif;
 
 }
 
@@ -34,6 +34,12 @@
     text-decoration: none;
     color: black;
     font-weight: 600;
+    margin-right: 2vw;
+}
+form > input {
+    width: 50%;
+    height: 30px;
+    border: 0px;
 }
 #user-image {
     max-height: 80%;
@@ -47,12 +53,6 @@
     margin-top: 3vh;
     width: 25%;
     text-align:center;
-}
-
-.login-input {
-    width: 50%;
-    height: 30px;
-    border: 0px;
 }
 
 form > * {

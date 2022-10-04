@@ -19,6 +19,7 @@ ul {
     width: 50%;
     padding: 10px;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    height: 70%;
 }
 
 article {
@@ -43,6 +44,10 @@ article {
 .forum::-webkit-scrollbar {
     display: none;
 }
+.pic-and-date ~ p {
+    font-size: 16px;
+}
+
 
 footer {
     width: 100%;
@@ -62,4 +67,8 @@ footer {
 
 footer > a {
     height: 80%;
+}
+
+img + p {
+    font-style: italic;
 }

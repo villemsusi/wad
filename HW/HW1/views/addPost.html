@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/addPost.css">
+</head>
+<body>
+<div class="flex-container">
+    <header class="flex-element">
+        <div id="menu">
+            <a class="menuLink" href="index.html">Home</a>
+            <a class="menuLink" href="addPost.html">Add Post</a>
+        </div>
+        <img src="../assets/defaultUser.png" id="user-image">
+    </header>
+    <div id="add-box" class="flex-element">
+        <form method="GET" class="newPost" action="index.html">
+            <label>Post <br> Body</label>
+            <input type="text" rows="4" cols="50" placeholder="textarea" class="textbox"><br>
+            <label>Select <br> file</label>
+            <input type="file" value="Choose file" class="button2"><br><br>
+            <input type="submit" value="Create post" class="button"><br>
+        </form>
+    </div>
+</div>
+</body>
+</html>

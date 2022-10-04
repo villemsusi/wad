@@ -72,3 +72,31 @@ footer > a {
 img + p {
     font-style: italic;
 }
+#left {
+    position: absolute;
+    left: 0;
+    width: 23%;
+    padding: 10px;
+    height: 65%;
+    margin-left: 10px;
+
+}
+#hesburger {
+    width: 100%;
+    height: 100%
+}
+#right {
+    position: absolute;
+    right: 0;
+    width: 23%;
+    padding: 10px;
+    height: 68%;
+    margin-left: 10px;
+}
+#house {
+    width: 100%;
+    height: 100%;
+}
+article p {
+    text-decoration-line: underline ;
+}

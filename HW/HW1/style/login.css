@@ -10,3 +10,13 @@
     height: 30px;
     border: 0;
 }
+@media screen and (max-width: 450px) {
+    #login-box {
+        width: 100%
+    }
+}
+@media only screen and (min-width: 850px) {
+    #login-box {
+        width: 25%;
+    }
+}

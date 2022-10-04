@@ -1,4 +1,4 @@
-.button2{
+.button2 {
     color: white;
     width: 10%;
     height: 20px;
@@ -6,29 +6,47 @@
     text-align: center;
 }
 
-#add-box{
+#add-box {
     padding: 5%;
     margin-top: 3vh;
-    width: 25%;
-    display:flex;
+    display: flex;
     flex-flow: column nowrap;
 }
-#add-box > input{
+
+#add-box > input {
     margin-top: 20%;
     height: 25px;
 }
 
 .newPost {
     width: 80%;
-    display:flex;
+    display: flex;
     flex-flow: row wrap;
 }
-.newPost > * {
-    flex-basis: 40%;
-}
 
-.textbox{
+.textbox {
     width: 100%;
     height: 40px;
     text-align: left;
+}
+
+@media only screen and (min-width: 850px) {
+    .newPost > * {
+        flex-basis: 40%;
+    }
+
+    #add-box {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .newPost > * {
+        flex-basis: 100%;
+    }
+
+    #add-box {
+        width: 55%
+    }
+
 }

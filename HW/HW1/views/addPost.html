@@ -5,6 +5,8 @@
 </style>
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/addPost.css">
@@ -16,12 +18,14 @@
             <a class="menuLink" href="index.html">Home</a>
             <a class="menuLink" href="addPost.html">Add Post</a>
         </div>
-        <img src="../assets/defaultUser.png" id="user-image">
+        <img src="../assets/defaultUser.png" id="user-image" alt="user image">
     </header>
     <div id="add-box" class="flex-element">
         <form method="GET" class="newPost" action="index.html">
             <label>Post <br> Body</label>
-            <input type="text" rows="4" cols="50" placeholder="textarea" class="textbox"><br>
+            <label>
+                <input type="text" placeholder="textarea" class="textbox">
+            </label><br>
             <label>Select <br> file</label>
             <input type="file" value="Choose file" class="button2"><br><br>
             <input type="submit" value="Create post" class="button"><br>

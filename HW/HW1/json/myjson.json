@@ -16,9 +16,22 @@
             "File": "index.html",
             "author": "Siim",
             "time": 2.5,
-            "title": "",
-            "body": ""
+            "title": "index page",
+            "body": "in this page a person can see post that have been added"
+        },
+        {
+            "File": "addPost.html",
+            "author": "Jennifer",
+            "time": 2.5,
+            "title": "Adding posts",
+            "body": "In this page a person can add new posts"
+        },
+        {
+            "File": "login.html",
+            "author": "Villem",
+            "time": 2,
+            "title": "Logging in",
+            "body": "In this page a person can log in to the website"
         }
-
     ]
 }

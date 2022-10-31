@@ -1,8 +1,24 @@
 {
-    "File": "index.html",
-    "author": "Siim",
-    "time": 12.213,
-    "id": 1,
-    "title": "",
-    "body": ""
+    "header": [
+        {
+            "File": "header.js",
+            "Author": "Siim Saaresalu",
+            "Time": 2,
+            "Name": "John Doe",
+            "Email": "john.doe@ut.ee",
+            "Title": "Log out",
+            "body": "A person can log out if that person wants to"
+
+        }
+    ],
+    "pages": [
+        {
+            "File": "index.html",
+            "author": "Siim",
+            "time": 2.5,
+            "title": "",
+            "body": ""
+        }
+
+    ]
 }

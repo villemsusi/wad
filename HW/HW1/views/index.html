@@ -15,9 +15,14 @@
             <a class="menuLink" href="index.html">Home</a>
             <a class="menuLink" href="addPost.html">Add Post</a>
         </div>
-        <img src="../assets/defaultUser.png" id="user-image" alt="user image">
+        <img onClick="showDropdown()" src="../assets/defaultUser.png" id="user-image" alt="user image">
     </header>
     <section class="forum">
+        <div id="dropdown-content">
+            <p>John Doe</p>
+            <p>john.doe@ut.ee</p>
+            <a href="login.html">logout</a>
+        </div>
         <div id="left">
             <img src="../assets/hesburger.jpg" id="hesburger" alt="hesburger logo">
         </div>
@@ -25,8 +30,8 @@
             <img src="../assets/house.jpg" id="house" alt="photo of dr. house">
         </div>
         <article>
-            <div class = "pic-and-date">
-                <img src="../assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+            <div class="pic-and-date">
+                <img src="../assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
                 <b>Oct 23, 2022</b>
             </div>
             <p>
@@ -35,7 +40,7 @@
         </article>
         <article>
             <div class="pic-and-date">
-                <img src="../assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+                <img src="../assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
                 <b>Oct 22, 2022</b>
             </div>
             <p>
@@ -43,34 +48,35 @@
             </p>
         </article>
         <article>
-            <div class = "pic-and-date">
-                <img src="../assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+            <div class="pic-and-date">
+                <img src="../assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
                 <b>July 21, 2022</b>
             </div>
             <img src="../assets/pilt_tartust.jpg" alt="pilt-tartust">
             <p>This is pretty cool</p>
         </article>
         <article>
-            <div class ="pic-and-date">
-                <img src="../assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+            <div class="pic-and-date">
+                <img src="../assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
                 <b>Mar 30, 2022</b>
             </div>
             <p>Tervitan
             </p>
         </article>
         <article>
-            <div class ="pic-and-date">
-                <img src="../assets/defaultUser.png" class = "prof-pic" alt="user-profile-picture">
+            <div class="pic-and-date">
+                <img src="../assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
                 <b>Jan 20, 2022</b>
             </div>
             <p>LJ?</p>
         </article>
     </section>
     <footer class="flex-element">
-            <a href="https://github.com/villemsusi/wad/tree/main/HW/HW1" target="_blank">
-                <img src="../assets/GitHub-Logo.png" id="github" alt="github-logo">
-            </a>
+        <a href="https://github.com/villemsusi/wad/tree/main/HW/HW1" target="_blank">
+            <img src="../assets/GitHub-Logo.png" id="github" alt="github-logo">
+        </a>
     </footer>
 </div>
+<script type="text/javascript" src="../src/js/header.js"></script>
 </body>
 </html>

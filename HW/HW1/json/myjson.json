@@ -1,37 +1,23 @@
 {
-    "header": [
+    "Posts" : [
         {
-            "File": "header.js",
-            "Author": "Siim Saaresalu",
-            "Time": 2,
-            "Name": "John Doe",
-            "Email": "john.doe@ut.ee",
-            "Title": "Log out",
-            "body": "A person can log out if that person wants to"
-
-        }
-    ],
-    "pages": [
-        {
-            "File": "index.html",
-            "author": "Siim",
-            "time": 2.5,
-            "title": "index page",
-            "body": "in this page a person can see post that have been added"
+            "Name": "question",
+            "id": "question",
+            "Author": "Siim",
+            "Time": "23.09"
         },
         {
-            "File": "addPost.html",
-            "author": "Jennifer",
-            "time": 2.5,
-            "title": "Adding posts",
-            "body": "In this page a person can add new posts"
+            "Name": "hellloooo post",
+            "id": "hello",
+            "Author": "Siim",
+            "Time": "23.09"
         },
         {
-            "File": "login.html",
-            "author": "Villem",
-            "time": 2,
-            "title": "Logging in",
-            "body": "In this page a person can log in to the website"
+            "Name": "hesburger logo",
+            "id": "hesburger",
+            "Author": "Burger-In Oy",
+            "Born": 2007,
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Hesburger_logo.svg/2560px-Hesburger_logo.svg.png"
         }
     ]
 }

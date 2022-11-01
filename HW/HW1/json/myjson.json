@@ -33,6 +33,18 @@
             "Author": "John Doe",
             "Time": "20.01.2022",
             "content": "This post asks about LJ"
+        },
+        {
+            "Name": "Birthday post",
+            "Author": "John Doe",
+            "Time": "26.03.2022",
+            "content": "This post shows that it was Alar Karis birthday"
+        },
+        {
+            "Name": "Holidays",
+            "Author": "John Doe",
+            "Time": "01.01.2022",
+            "content": "This post shows all the public holidays and days off in year 2022 in Estonia"
         }
     ]
 }

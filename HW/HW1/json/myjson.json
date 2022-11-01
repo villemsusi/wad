@@ -4,20 +4,35 @@
             "Name": "question",
             "id": "question",
             "Author": "Siim",
-            "Time": "23.09"
+            "Time": "23.09.2022",
+            "content": "question about the room where is the lab"
         },
         {
             "Name": "hellloooo post",
             "id": "hello",
             "Author": "Siim",
-            "Time": "23.09"
+            "Time": "23.09.2022",
+            "content": "This post says hello"
         },
         {
-            "Name": "hesburger logo",
-            "id": "hesburger",
-            "Author": "Burger-In Oy",
-            "Born": 2007,
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Hesburger_logo.svg/2560px-Hesburger_logo.svg.png"
+            "Name": "pilt Tartust",
+            "id": "tartu",
+            "Author": "John Doe",
+            "Time": "21.07.2022",
+            "img": "https://www.parkimine.ee/wp-content/uploads/2020/06/tartu.png",
+            "content": "Picture of Tartu old town looking at Tartu City Government and text commenting that this is pretty cool"
+        },
+        {
+            "Name": "Tervitus",
+            "Author": "John Doe",
+            "Time": "30.03.2022",
+            "content": "This post says hello in estonian language"
+        },
+        {
+            "Name": "LJ",
+            "Author": "John Doe",
+            "Time": "20.01.2022",
+            "content": "This post asks about LJ"
         }
     ]
 }

@@ -26,10 +26,10 @@
             <p>john.doe@ut.ee</p>
             <a href="login.html">logout</a>
         </div>
-        <form method="GET" class="newPost" action="index.html">
+        <form method="GET" class="newPost" action="index.html" id="addForm">
             <label>Post <br> Body</label>
             <label>
-                <input type="text" placeholder="textarea" class="textbox">
+                <input type="text" placeholder="textarea" class="textbox" required>
             </label><br>
             <label>Select <br> file</label>
             <input type="file" value="Choose file" class="button2"><br><br>
@@ -38,5 +38,6 @@
     </div>
 </div>
 <script type="text/javascript" src="../src/js/header.js"></script>
+    <script type="text/javascript" src="../src/js/addPost.js"></script>
 </body>
 </html>

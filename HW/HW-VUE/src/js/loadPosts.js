@@ -24,6 +24,9 @@ function createPostsFromJson(json) {
         let postContent = document.createElement("p");
         postContent.innerHTML = post.content;
         area.lastChild.appendChild(postContent);
+        let likeButton=document.createElement("likeButton")
+        likeButton.className="likeButton"
+        area.lastChild.appendChild(likeButton)
     }
 }
 

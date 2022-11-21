@@ -111,6 +111,11 @@ article p {
         height: 100%;
         display: initial;
     }
+    #left #right{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
     #house {
         width: 100%;
         height: 100%;
@@ -118,6 +123,13 @@ article p {
     }
     .forum {
         width: 50%
+    }
+    .likeButton{
+        color: white;
+        width: 10%;
+        height: 20px;
+        background-color: gray;
+        text-align: center;
     }
 }
 

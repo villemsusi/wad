@@ -66,8 +66,8 @@ img {
 }
 #left {
     position: absolute;
-    left: 0;
-    width: 23%;
+    left: 2.5em;
+    width: 15%;
     padding: 10px;
     height: 65%;
     margin-left: 10px;
@@ -80,13 +80,14 @@ img {
 }
 #right {
     position: absolute;
-    right: 5px;
-    width: 23%;
+    right: 3em;
+    width: 15%;
     padding: 10px;
     height: 65%;
     margin-left: 10px;
     border-radius: 10px;
     background-color: #fabf96;
+
 }
 
 article p {

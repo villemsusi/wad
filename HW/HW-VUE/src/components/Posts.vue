@@ -19,7 +19,7 @@
   window.addEventListener("load", function(event) {
     createPostsFromJson(Posts);
   });
-  export default click
+  //export default click
 </script>
 
 

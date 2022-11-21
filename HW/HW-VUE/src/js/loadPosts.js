@@ -27,9 +27,15 @@ function createPostsFromJson(json) {
         let likeDiv = document.createElement("div")
         likeDiv.className = "like-and-amount"
         area.lastChild.appendChild(likeDiv)
-        let likeButton=document.createElement("button")
+        let likeButton=document.createElement("img")
+        likeButton.className = "likeButton"
+        likeButton.src = "../src/assets/like.png"
+        likeButton.addEventListener("click", ev => {
+            click();
+        })
         likeDiv.appendChild(likeButton)
         let likeAmount = document.createElement("p")
+        likeAmount.className = "clicks"
         likeAmount.innerHTML = "0"
         likeDiv.appendChild(likeAmount)
     }
@@ -37,7 +43,7 @@ function createPostsFromJson(json) {
 import Posts from "@/components/Posts.vue";
 function click(likeAmount) {
     likeAmount += 1;
-    document.getElementById("clicks").innerHTML = clicks;
+    document.getElementsByClassName("clicks").innerHTML = likeAmount;
 }
 
 export default createPostsFromJson;

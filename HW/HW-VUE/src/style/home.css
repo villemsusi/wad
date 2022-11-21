@@ -44,10 +44,10 @@ article {
 .forum::-webkit-scrollbar {
     display: none;
 }
+
 .pic-and-date ~ p {
     font-size: 16px;
 }
-
 
 #github {
     height: 100%;
@@ -61,9 +61,11 @@ footer > a {
 img + p {
     font-style: italic;
 }
+
 img {
     width: 100%;
 }
+
 #left {
     position: absolute;
     left: 2.5em;
@@ -75,9 +77,11 @@ img {
     background-color: #fabf96;
 
 }
+
 #postArea {
     width: 100%
 }
+
 #right {
     position: absolute;
     right: 3em;
@@ -91,35 +95,45 @@ img {
 }
 
 article p {
-    text-decoration-line: underline ;
+    text-decoration-line: underline;
 }
-@media screen and (max-width: 450px) {
-    #hesburger {
-        display: none;
-    }
-    #house {
-        display: none;
-    }
-    .forum {
-        width: 85%
-    }
-    #left, #right {
-        display: none;
-    }
 
-
-}
-.likeButton{
-    background-image: image("../src/assets/like.jpg");
-    width: 100%;
+.likeButton {
+    width: 15%;
     height: 100%;
+    margin-right: 1%;
+    padding: 10px 20px
+
 }
+
 .like-and-amount {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px
 }
+
+
+@media screen and (max-width: 450px) {
+    #hesburger {
+        display: none;
+    }
+
+    #house {
+        display: none;
+    }
+
+    .forum {
+        width: 85%
+    }
+
+    #left, #right {
+        display: none;
+    }
+
+
+}
+
 @media only screen and (min-width: 850px) {
     #hesburger {
         width: 100%;
@@ -132,6 +146,7 @@ article p {
         height: 100%;
         display: initial;
     }
+
     .forum {
         width: 50%
     }

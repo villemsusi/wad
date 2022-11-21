@@ -111,11 +111,7 @@ article p {
         height: 100%;
         display: initial;
     }
-    #left #right{
-        display: none;
-        visibility: hidden;
-        opacity: 0;
-    }
+
     #house {
         width: 100%;
         height: 100%;

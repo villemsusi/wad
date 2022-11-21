@@ -25,9 +25,10 @@ function handleSubmit(e) {
         "Time": currentDate,
         "language": language,
         "content": content,
-    };
+    }, currJson;
+    currJson.Posts = undefined;
 
-    fetch("../json/posts.json")
+    fetch("../src/js/posts.json")
             .then((response) => response.json())
             .then((json) => {
                 currJson = json;

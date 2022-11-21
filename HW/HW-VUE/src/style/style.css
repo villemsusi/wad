@@ -10,7 +10,7 @@
 
 .flex-element {
     border-radius: 10px;
-    background-color: lightgray;
+    background-color: #fabf96;
 }
 
 .button {
@@ -60,7 +60,7 @@ form > input {
     position: absolute;
     right: 1%;
     top: 4.6em;
-    background-color: darkgray;
+    background-color: #fdcca9;
     margin-top: 1%;
     overflow: auto;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@ form > input {
 }
 
 #dropdown-content a:hover, #dropdown-content p:hover {
-    background-color: #ddd;
+    background-color: #ff9b54;
 }
 
 .show {
@@ -90,7 +90,19 @@ form > * {
 }
 
 .menuLink:hover {
-    background-color: gray;
+    background-color: #ff9b54;
+    border-radius: 5px;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    margin-top: 2vh;
+    margin-bottom: 0.1vh;
 }
 
 

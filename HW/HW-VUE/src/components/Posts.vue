@@ -19,7 +19,9 @@
   window.addEventListener("load", function(event) {
     createPostsFromJson(Posts);
   });
+  export default click
 </script>
+
 
 <style>
   @import '../style/home.css';

@@ -33,10 +33,11 @@
 @media only screen and (min-width: 850px) {
     .newPost > * {
         flex-basis: 40%;
+        justify-content: center;
     }
 
     #add-box {
-        width: 25%;
+        width: 37%;
     }
 }
 
@@ -49,4 +50,8 @@
         width: 55%
     }
 
+}
+
+#addForm {
+    width: 100%;
 }

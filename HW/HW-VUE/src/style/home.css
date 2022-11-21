@@ -19,10 +19,11 @@ ul {
     padding: 10px;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     height: 70%;
+
 }
 
 article {
-    background-color: lightgray;
+    background-color: beige;
     border-radius: 5px;
     margin: 5px;
     padding: 8px
@@ -48,17 +49,6 @@ article {
 }
 
 
-footer {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: lightgray;
-    margin-top: 2vh;
-    margin-bottom: 0.1vh;
-}
-
 #github {
     height: 100%;
     width: auto;
@@ -71,22 +61,33 @@ footer > a {
 img + p {
     font-style: italic;
 }
+img {
+    width: 100%;
+}
 #left {
     position: absolute;
-    left: 0;
-    width: 23%;
+    left: 2.5em;
+    width: 15%;
     padding: 10px;
     height: 65%;
     margin-left: 10px;
+    border-radius: 10px;
+    background-color: #fabf96;
 
+}
+#postArea {
+    width: 100%
 }
 #right {
     position: absolute;
-    right: 0;
-    width: 23%;
+    right: 3em;
+    width: 15%;
     padding: 10px;
     height: 65%;
     margin-left: 10px;
+    border-radius: 10px;
+    background-color: #fabf96;
+
 }
 
 article p {
@@ -102,7 +103,22 @@ article p {
     .forum {
         width: 85%
     }
+    #left, #right {
+        display: none;
+    }
 
+
+}
+.likeButton{
+    background-image: image("../src/assets/like.jpg");
+    width: 100%;
+    height: 100%;
+}
+.like-and-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px
 }
 @media only screen and (min-width: 850px) {
     #hesburger {
@@ -110,6 +126,7 @@ article p {
         height: 100%;
         display: initial;
     }
+
     #house {
         width: 100%;
         height: 100%;

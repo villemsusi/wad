@@ -40,10 +40,32 @@ function createPostsFromJson(json) {
         likeDiv.appendChild(likeAmount)
     }
 }
-import Posts from "@/components/Posts.vue";
+
 function click(likeAmount) {
     likeAmount += 1;
     document.getElementsByClassName("clicks").innerHTML = likeAmount;
 }
 
 export default createPostsFromJson;
+
+/*import Posts from "@/components/Posts.vue";
+export default Posts(
+    {
+        strict: true,
+        state:{
+
+        },
+        getters:{
+
+        },
+        mutation:{
+
+
+        },
+        action:{
+
+        }
+
+    }
+)*/
+

@@ -1,6 +1,6 @@
 import {createStore} from 'vuex'
 
-export default createStore({
+const store = createStore({
     strict: true,
     state: {
         postList:
@@ -96,32 +96,35 @@ export default createStore({
                     likeAmount: 0
                 },
 
-],
-getters: {
-    productListSale: state => {
-        return state.postList.map(post => {
-                const temp = structuredClone(post)
-                //temp.likeAmount = temp.likeAmount
-                return temp
+            ],
+        getters: {
+            postList: state => {
+                return state.postList.map(post => {
+                        const temp = structuredClone(post)
+                        //temp.likeAmount = temp.likeAmount
+                        return temp
+                    }
+                )
             }
-        )
-    }
-}
-,
-mutations: {
-    increasePrice: state => {
-        state.postList.forEach(p => {
-            p.ID += 1;
-        })
-    }
-}
-,
-actions: {
-    increasePriceAction: action => {
-        setTimeout(function () {
-            action.commit("increasePrice")
-        }, 1000)
-    }
+        }
+        ,
+        mutations: {
+            increaseLikes: state => {
+                state.postList.forEach(p => {
+                    p.ID += 1;
+                })
+            }
+        }
+        ,
+        actions: {
+            increaseLikes: action => {
+                setTimeout(function () {
+                    action.commit("likeAmount")
+                }, 1000)
+            }
 
-}
-    },})
+        }
+    },
+})
+
+export default store;

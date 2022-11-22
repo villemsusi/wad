@@ -31,7 +31,6 @@ function createPostsFromJson(json) {
         likeButton.className = "likeButton"
         likeButton.src = "../src/assets/like.png"
         likeButton.addEventListener("click", ev => {
-            
             console.log("hahaha");
         })
         likeDiv.appendChild(likeButton)
@@ -47,26 +46,4 @@ function click(likeAmount) {
     document.getElementsByClassName("clicks").innerHTML = likeAmount;
 }
 
-export default createPostsFromJson;
-
-/*import Posts from "@/components/Posts.vue";
-export default Posts(
-    {
-        strict: true,
-        state:{
-
-        },
-        getters:{
-
-        },
-        mutation:{
-
-
-        },
-        action:{
-
-        }
-
-    }
-)*/
 

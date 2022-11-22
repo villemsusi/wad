@@ -1,14 +1,25 @@
 #login-box {
     padding: 5%;
     margin-top: 3vh;
+    margin-bottom: 3vh;
     width: 25%;
-    text-align:center;
+    text-align: center;
+}
+
+#signup-box {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: 25%;
+    text-align: right;
 }
 
 .login-input {
     width: 50%;
     height: 30px;
-    border: 0;
+    border-radius: 10px;
 }
 @media screen and (max-width: 450px) {
     #login-box {
@@ -19,4 +30,10 @@
     #login-box {
         width: 25%;
     }
+}
+
+.error_message {
+    color: red;
+    font-size: 14px;
+    
 }

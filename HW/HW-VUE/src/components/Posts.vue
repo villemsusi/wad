@@ -1,8 +1,3 @@
-<script setup>
-  import createPostsFromJson from '@/js/loadPosts.js';
-  import Posts from '@/js/posts.json';
-</script>
-
 <template>
   <section class="forum">
     <div id="left">
@@ -15,11 +10,6 @@
   </section>
 </template>
 
-<script>
-  window.addEventListener("load", function(event) {
-    createPostsFromJson(Posts);
-  });
-</script>
 
 <style>
   @import '../style/home.css';

@@ -65,37 +65,37 @@ export default createStore({
                     Author: "John Doe",
                     Time: "01.01.2022",
                     language: "english",
-                    "content": "This post shows all the public holidays and days off in year 2022 in Estonia",
-                    "likeAmount": 0
+                    content: "This post shows all the public holidays and days off in year 2022 in Estonia",
+                    likeAmount: 0
                 },
                 {
-                    "ID": 8,
-                    "Name": "Horoscope",
-                    "Author": "John Doe",
-                    "Time": "02.01.2022",
-                    "language": "estonian",
-                    "content": "This post is about sagittarius horoscope",
-                    "likeAmount": 0
+                    ID: 8,
+                    Name: "Horoscope",
+                    Author: "John Doe",
+                    Time: "02.01.2022",
+                    language: "estonian",
+                    content: "This post is about sagittarius horoscope",
+                    likeAmount: 0
                 },
                 {
-                    "ID": 9,
-                    "Name": "Netflix shows",
-                    "Author": "jennifer ",
-                    "Time": "01.10.2022",
-                    "language": "english",
-                    "content": "This post shows three most popular shows in Netflix currently",
-                    "likeAmount": 0
+                    ID: 9,
+                    Name: "Netflix shows",
+                    Author: "jennifer ",
+                    Time: "01.10.2022",
+                    language: "english",
+                    content: "This post shows three most popular shows in Netflix currently",
+                    likeAmount: 0
                 },
                 {
-                    "ID": 10,
-                    "Name": "Web application exam",
-                    "Author": "jennifer ",
-                    "Time": "30.09.2022",
-                    "language": "estonian",
-                    "content": "This post shows Web application exam times",
-                    "likeAmount": 0
-                }
-    }
+                    ID: 10,
+                    Name: "Web application exam",
+                    Author: "jennifer ",
+                    Time: "30.09.2022",
+                    language: "estonian",
+                    content: "This post shows Web application exam times",
+                    likeAmount: 0
+                },
+
 ],
 getters: {
     productListSale: state => {
@@ -124,4 +124,4 @@ actions: {
     }
 
 }
-})
+    },})

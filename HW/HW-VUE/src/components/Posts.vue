@@ -12,6 +12,7 @@ import Posts from '../js/posts.json';
       <img src="../assets/house.jpg" id="house" alt="photo of dr. house">
     </div>
     <div id="postArea"></div>
+    <button v-on:click="ResetLikes">Reset likes</button>
   </section>
 </template>
 
@@ -124,6 +125,9 @@ export default {
     increaseLikes: function () {
       this.$store.commit("increaseLikeAction")
 
+    },
+    ResetLikes: function () {
+      this.$store.commit("ResetLikesAct")
     }
   }
 }

@@ -24,6 +24,7 @@
 <script>
 import store from "../store";
 
+
 export default {
   name: "Posts",
   data: function () {

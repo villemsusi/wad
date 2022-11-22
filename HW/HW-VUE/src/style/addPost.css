@@ -11,6 +11,9 @@
     margin-top: 3vh;
     display: flex;
     flex-flow: column nowrap;
+    height: 30%;
+    width: 40%;
+    margin-left: 33vh;
 }
 
 #add-box > input {
@@ -22,6 +25,11 @@
     width: 80%;
     display: flex;
     flex-flow: row wrap;
+}
+
+#addPostArea {
+    height: 70%;
+    width: 70%
 }
 
 .textbox {

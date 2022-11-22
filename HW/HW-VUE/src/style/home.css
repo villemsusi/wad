@@ -12,13 +12,20 @@ ul {
     color: #41494b;
     font-size: .99em;
 }
+#resetButton {
+    background-color: cyan;
+    margin-left: 22vw;
+    border-radius: 10px;
+    padding: 1vh 1vh
 
+}
 .forum {
     overflow: scroll;
     margin: auto;
     padding: 10px;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     height: 70%;
+    align-items: center;
 
 }
 
@@ -78,7 +85,7 @@ img {
 
 }
 
-#postArea {
+.postArea {
     width: 100%
 }
 

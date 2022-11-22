@@ -8,9 +8,9 @@ export default createStore({
     },
     getters: {
         productListSale: state => {
-            return state.productList.map(product => {
-                    const temp = structuredClone(product)
-                    temp.price = temp.price * 0.5
+            return state.postList.map(post => {
+                    const temp = structuredClone(post)
+                    //temp.likeAmount = temp.likeAmount
                     return temp
                 }
             )
@@ -18,14 +18,17 @@ export default createStore({
     },
     mutations: {
         increasePrice: state => {
-            state.productList.forEach(p => {
-                p.price += 1;
-            })
-
-        },
-        decreasePrice: state => {
-            state.productList.forEach(p => {
-                p.price -= 1;
+            state.postList.forEach(p => {
+                p.ID += 1;
             })
         }
     },
+    actions: {
+        increasePriceAction: action =>{
+            setTimeout(function (){
+                action.commit("increasePrice")
+            }, 1000)
+        }
+
+    }
+})

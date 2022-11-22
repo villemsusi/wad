@@ -31,6 +31,7 @@ function createPostsFromJson(json) {
         likeButton.className = "likeButton"
         likeButton.src = "../src/assets/like.png"
         likeButton.addEventListener("click", ev => {
+            
             console.log("hahaha");
         })
         likeDiv.appendChild(likeButton)

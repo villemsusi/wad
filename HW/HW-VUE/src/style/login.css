@@ -32,6 +32,10 @@
     }
 }
 
+.button:disabled {
+    background-color: gray;
+}
+
 .error_message {
     color: red;
     font-size: 14px;

@@ -3,14 +3,14 @@
   
   <template>
     <div id="signup-box" class="flex-element">
-        <form method="POST">
+        <form method="POST" >
             <label for="formEmail">Email:</label>
-            <input type="email" id="formEmail" class="login-input" placeholder="Email" v-model.trim="v$.email.$model" required><br>
+            <input type="email" id="formEmail" class="login-input" placeholder="Email" v-model.trim="v$.email.$model"><br>
             <p v-for="error of v$.email.$errors" :key="error.$uid" class="error_message"> {{ error.$message }} </p>
             <label for="formPassword">Password:</label>
-            <input type="password" id="formPassword" class="login-input" placeholder="Password" v-model.trim="v$.password.$model" @input="v$.$touch()" required><br>
+            <input type="password" id="formPassword" class="login-input" placeholder="Password" v-model.trim="v$.password.$model" @input="v$.$touch()"><br>
             <p v-for="error of v$.password.$errors" :key="error.$uid" class="error_message"> {{ error.$message }} </p>
-            <input type="submit" value="Signup" class="button login-input"><br>
+            <router-link to="/"><input type="submit" :disabled="v$.password.$invalid || v$.email.$invalid" value="Signup" class="button login-input"></router-link>
         </form>
     </div>
   </template>
@@ -19,7 +19,7 @@
   
   <script>
       import { useVuelidate } from '@vuelidate/core'
-      import { required, helpers, minLength, maxLength } from '@vuelidate/validators'
+      import { required, email, helpers, minLength, maxLength } from '@vuelidate/validators'
 
       export default {
         setup () {
@@ -34,6 +34,7 @@
         validations: {
           email: {
             required,
+            email
 
           },
           password: {

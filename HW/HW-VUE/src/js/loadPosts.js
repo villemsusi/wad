@@ -45,5 +45,5 @@ function click(likeAmount) {
     likeAmount += 1;
     document.getElementsByClassName("clicks").innerHTML = likeAmount;
 }
-
+export default createPostsFromJson
 

@@ -1,3 +1,8 @@
+<script setup>
+import createPostsFromJson from '../js/loadPosts.js';
+import Posts from '../js/posts.json';
+</script>
+
 <template>
   <section class="forum">
     <div id="left">
@@ -11,13 +16,12 @@
 </template>
 
 <script>
-import store from "@/store";
+import store from "../store";
 window.addEventListener("load", function (event) {
   createPostsFromJson(Posts);
 });
 export default {
   name: "Posts",
-  components: {ProductCompoOne, ProductCompoTwo},
   data: function () {
     return {
       postList: [{

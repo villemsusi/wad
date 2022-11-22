@@ -113,6 +113,11 @@ const store = createStore({
                 state.postList.forEach(p => {
                     p.ID += 1;
                 })
+            },
+            ResetLikes: state => {
+                state.postList.forEach(p => {
+                    p.likeAmount = 0
+                })
             }
         }
         ,
@@ -121,6 +126,9 @@ const store = createStore({
                 setTimeout(function () {
                     action.commit("likeAmount")
                 }, 1000)
+            },
+            ResetLikesAct: act => {
+                act.commit("ResetLikes")
             }
 
         }

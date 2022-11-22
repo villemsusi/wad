@@ -1,4 +1,5 @@
 import {createStore} from 'vuex'
+import createPostsFromJson from "../js/loadPosts";
 
 const store = createStore({
     strict: true,
@@ -98,16 +99,8 @@ const store = createStore({
 
             ],
         getters: {
-            postList: state => {
-                return state.postList.map(post => {
-                        const temp = structuredClone(post)
-                        //temp.likeAmount = temp.likeAmount
-                        return temp
-                    }
-                )
-            }
-        }
-        ,
+
+        },
         mutations: {
             increaseLikes: state => {
                 state.postList.forEach(p => {

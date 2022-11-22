@@ -6,7 +6,17 @@
     <div id="right">
       <img src="../assets/house.jpg" id="house" alt="photo of dr. house">
     </div>
-    <div id="postArea"></div>
+    <div v-for="post in postList" :key="post.ID" class="postArea">
+      <div class="pic-and-date">
+        <img src="src/assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
+        <b> {{ post.Author }}</b>
+      </div>
+      <p> {{post.content}}</p>
+      <div class="like-and-amount">
+        <img class="likeButton" src="src/assets/like.png">
+        <p class="clicks">0</p>
+      </div>
+    </div>
     <button v-on:click="ResetLikes">Reset likes</button>
   </section>
 </template>
@@ -121,6 +131,11 @@ export default {
     },
     ResetLikes: function () {
       this.$store.commit("ResetLikesAct")
+    }
+  },
+  computed: {
+    postList() {
+      return this.$store.state.postList
     }
   }
 }

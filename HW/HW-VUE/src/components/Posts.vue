@@ -28,9 +28,19 @@
 
 export default {
   name: "Posts",
+  data() {
+    return {
+      posts: [],
+    }
+  },
 
   methods: {
-
+    fetchPosts() {
+      fetch(`http://localhost:3000/api/posts/`)
+        .then((response) => response.json())
+        .then((data) => (this.posts = data))
+        .catch((err) => console.log(err.message));
+    },
     increaseLikes(id) {
       this.$store.dispatch("increaseLikes", id)
 
@@ -43,6 +53,9 @@ export default {
     postList() {
       return this.$store.state.postList
     }
+  },
+  mounted() {
+    this.fetchPosts();
   }
 }
 </script>

@@ -5,6 +5,7 @@
         <router-link class="menuLink" to="/addpost">Add Post</router-link>     
         <router-link class="menuLink" to="/login">Login</router-link>
         <router-link class="menuLink" to="/contact">Contacts</router-link>
+        <router-link class="menuLink" to="/aPost">aaa</router-link>
     </div>
     <img src="../assets/defaultUser.png" id="user-image" alt="user image">
   </header>

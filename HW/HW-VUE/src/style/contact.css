@@ -1,7 +1,7 @@
 #contactArea {
     height: 80%;
     width: 85%;
-    margin-left: 90vh;
+
 }
 
 #back {
@@ -10,6 +10,7 @@
     margin-bottom: 3vh;
     width: 35%;
     text-align: center;
+    margin-left: 50vh;
     height: 70%;
     background-color: #fde0cb;
 }

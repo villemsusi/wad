@@ -1,0 +1,18 @@
+#aPostArea {
+    height: 80%;
+    width: 85%;
+    margin-left: 90vh;
+}
+
+#aPost-Box {
+    padding: 5%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: 35%;
+    text-align: center;
+    height: 70%;
+    background-color: #fde0cb;
+}
+label{
+    font-size: 20px;
+}

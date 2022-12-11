@@ -4,14 +4,14 @@
   <template>
     <div id="outer-area">
       <div id="login-box" class="flex-element">
-        <b>Welcome to PostIt</b><br><br>
-        <router-link to="/signup">Create Account</router-link>
-        <p>or<br>Please log in</p><br>
+        <b>Welcome to PostIt</b>
+        <p>Please log in</p><br>
         <form method="POST">
           <input type="email" id="formEmail" class="login-input" placeholder="Email" required><br>
           <input type="password" id="formPassword" class="login-input" placeholder="Password" required><br>
           <router-link to="/"><input type="submit" @click="login" value="Login" class="button login-input"></router-link><br>
-          <a href="#">Forget password</a><br>
+          <p>or</p>
+          <router-link to="/signup"><input type="submit" value="Create account" class="button login-input"></router-link>
         </form>
       </div>
     </div>

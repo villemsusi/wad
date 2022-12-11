@@ -14,13 +14,9 @@
         </div>
         <img v-bind:src=post.img v-bind:id=post.id v-bind:alt=post.id>
         <p> {{ post.content }}</p>
-        <div class="like-and-amount">
-          <img @click="increaseLikes(post.ID)" class="likeButton" src="src/assets/like.png" alt="likeIcon">
-          <p class="clicks">{{ post.likeAmount }}</p>
-        </div>
       </article>
     </div>
-    <button id="resetButton" @click="ResetLikes">Reset likes</button>
+    <button id="deleteButton" @click="DeleteAll">Delete all</button>
   </section>
 </template>
 
@@ -41,12 +37,8 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
-    increaseLikes(id) {
-      this.$store.dispatch("increaseLikes", id)
-
-    },
-    ResetLikes() {
-      this.$store.dispatch("ResetLikes")
+    DeleteAll() {
+      this.$store.dispatch("DeleteAll")
     }
   },
   computed: {

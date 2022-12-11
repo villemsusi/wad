@@ -1,7 +1,7 @@
 #aPostArea {
     height: 80%;
     width: 85%;
-    margin-left: 90vh;
+
 }
 #text{
     overflow-wrap: break-word;
@@ -19,6 +19,7 @@
     margin-top: 3vh;
     margin-bottom: 3vh;
     width: 35%;
+    margin-left: 50vh;
     text-align: center;
     height: 70%;
     background-color: #fde0cb;

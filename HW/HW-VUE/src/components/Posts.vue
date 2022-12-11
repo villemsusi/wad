@@ -10,10 +10,9 @@
       <article>
         <div class="pic-and-date">
           <img src="src/assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
-          <b> {{ post.Author }} @ {{ post.Time }}</b>
+          <b> {{ post.Author }} @ {{ post.title }}</b>
         </div>
-        <img v-bind:src=post.img v-bind:id=post.id v-bind:alt=post.id>
-        <p> {{ post.content }}</p>
+        <p> {{ post.body }}</p>
       </article>
     </div>
     <button id="deleteButton" @click="DeleteAll">Delete all</button>

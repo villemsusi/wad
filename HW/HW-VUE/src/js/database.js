@@ -1,12 +1,22 @@
+//The easiest and by far most common way to use node-postgres is through a connection pool.
+//The PostgreSQL server can only handle a limited number of clients at a time, and
+// it can only process one query at a time on a single connected client in a first-in first-out manner.
+//If your app is using only a single connected client all queries among all simultaneous requests will be pipelined and executed serially.
+// The client pool allows you to have a reusable pool of clients you can check out, use, and return.
+
+
+//node-postgres also has built-in support for promises throughout all of its async APIs.
+//Promises allow us to use async/await in node v8.0 and above.
+
 const Pool = require('pg').Pool;
 
 // this code will work and a table will be created if you have already created the "testWad" database.
 const pool = new Pool({
     user: "postgres",
-    password: "K2sn2K2ll3", // Enter your password here
+    password: "postgres", // Enter your password here
     database: "testWad", //Try to use the same name for your database
     host: "localhost",
-    port: "5432"
+    port: "54320"
 });
 
 

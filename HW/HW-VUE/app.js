@@ -1,5 +1,5 @@
 const express = require('express');
-const pool = require('./src/database');
+const pool = require('./database');
 const cors = require('cors')
 const port = process.env.PORT || 3000;
 
@@ -15,8 +15,9 @@ app.get("/api/posts", cors(), async(req, res) => {
     try {
         console.log("GET posts request arrived")
         const posts = await pool.query(
-            "SELECT * FROM posts"
+            "SELECT * FROM posttable"
         );
+        console.log(posts)
         res.json(posts.rows);
     } catch (err) {
         console.log(err.message);
@@ -28,7 +29,7 @@ app.get('/api/posts/:id', cors(), async(req, res) => {
         console.log("get a post with route parameter  request has arrived");
         const { id } = req.params;
         const posts = await pool.query(
-            "SELECT * FROM posts WHERE id = $1", [id]
+            "SELECT * FROM posttable WHERE id = $1", [id]
         );
         res.json(posts.rows[0]); 
     } catch (err) {
@@ -42,7 +43,7 @@ app.put('/api/posts/:id', cors(), async(req, res) => {
         const post = req.body;
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posts SET (title, body, urllink) = ($2, $3, $4) WHERE id = $1", [id, post.title, post.body, post.urllink]
+            "UPDATE posttable SET (title, body, urllink) = ($2, $3, $4) WHERE id = $1", [id, post.title, post.body, post.urllink]
         );
         res.json(updatepost);
     } catch (err) {

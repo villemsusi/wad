@@ -6,7 +6,7 @@
     <div id="right">
       <img src="../assets/house.jpg" id="house" alt="photo of dr. house">
     </div>
-    <div v-for="post in postList" :key="post.ID" id="postArea">
+    <div v-for="post in posts" :key="post.ID" id="postArea">
       <article>
         <div class="pic-and-date">
           <img src="src/assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">

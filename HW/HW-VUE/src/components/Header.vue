@@ -4,6 +4,7 @@
         <router-link class="menuLink" to="/">Home</router-link>
         <router-link class="menuLink" to="/addpost">Add Post</router-link>     
         <router-link class="menuLink" to="/login">Login</router-link>
+        <router-link class="menuLink" to="/contact">Contacts</router-link>
     </div>
     <img src="../assets/defaultUser.png" id="user-image" alt="user image">
   </header>

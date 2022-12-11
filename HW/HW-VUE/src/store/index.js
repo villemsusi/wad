@@ -99,16 +99,8 @@ export default createStore({
                 ]
         },
         mutations: {
-            increaseLike(state, id) {
-                for (let i = 0; i < state.postList.length; i++) {
-                    if (id === state.postList[i].ID) {
-                        console.log('jah')
-                        state.postList[i].likeAmount++;
-                        break;
-                    }
-                }
-            },
-            ResetLikes: state => {
+
+            Deleteall: state => {
                 state.postList.forEach(p => {
                     p.likeAmount = 0
                 })
@@ -116,11 +108,8 @@ export default createStore({
         }
         ,
         actions: {
-            increaseLikes({commit}, id) {
-                commit("increaseLike", id)
-            },
-            ResetLikes: act => {
-                act.commit("ResetLikes")
+            Deleteall: act => {
+                act.commit("Deleteall")
             }
 
         }

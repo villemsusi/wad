@@ -10,6 +10,7 @@
         <label>Select <br> file</label>
         <input type="file" class="button2"><br><br>
         <input id="postButton" type="submit" class="button"><br>
+        <button id="deletePost" @click="DeletePosts">Delete</button>
       </form>
     </div>
   </div>

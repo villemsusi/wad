@@ -5,17 +5,51 @@
       <form method="GET" class="newPost" id="addForm">
         <label>Post <br> Body</label>
         <label>
-          <input type="text" placeholder="textarea" class="textbox" required>
+          <input type="text" placeholder="textarea" id="textbox" required>
         </label><br>
-        <label>Select <br> file</label>
-        <input type="file" class="button2"><br><br>
-        <input id="postButton" type="submit" class="button"><br>
-        <button id="deletePost" @click="DeletePosts">Delete</button>
+        <button id="postButton" @click="getPostInfo" type="submit">Submit</button>
+        <br>
       </form>
     </div>
   </div>
 </template>
 
+<script>
+
+export default {
+
+  name: "AddPost",
+  data() {
+    return {}
+  },
+  methods: {
+    async getPostInfo() {
+      let textbox = document.getElementById("textbox")
+      let text = textbox.value
+      const date = new Date();
+      let day = date.getDate().toString();
+      let month = (date.getMonth() + 1).toString();
+      let year = date.getFullYear().toString();
+      let currentDate = day+'.'+month+'.'+year;
+      const request = {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        credentials: 'include',
+        body: JSON.stringify({
+          "title": currentDate,
+          "body": text,
+          "urllink": null,
+        })
+      }
+      fetch(`http://localhost:3000/api/addpost`, request)
+
+      let button = document.getElementById("postButton")
+
+    }
+  }
+
+}
+</script>
 <style>
 @import '../style/addPost.css';
 </style>

@@ -2,12 +2,26 @@ const express = require('express');
 const pool = require('./database');
 const cors = require('cors')
 const port = process.env.PORT || 3000;
+const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 app.use(express.json());
+
+app.use(cookieParser());
+
+const secret = "reighreGInergnRGBRGInr9897RbB";
+const maxAge = 60 * 60;
+
+const generateJWT = (id) => {
+    return jwt.sign({ id }, secret, { expiresIn: maxAge })
+}
+
 
 
 
@@ -17,7 +31,6 @@ app.get("/api/posts", cors(), async(req, res) => {
         const posts = await pool.query(
             "SELECT * FROM posttable"
         );
-        console.log(posts)
         res.json(posts.rows);
     } catch (err) {
         console.log(err.message);
@@ -37,18 +50,104 @@ app.get('/api/posts/:id', cors(), async(req, res) => {
     }
 });
 
-app.put('/api/posts/:id', cors(), async(req, res) => {
+
+app.put('/api/addpost', cors(), async(req, res) => {
     try {
-        const { id } = req.params;
         const post = req.body;
+        console.log(req.body)
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posttable SET (title, body, urllink) = ($2, $3, $4) WHERE id = $1", [id, post.title, post.body, post.urllink]
-        );
+            `INSERT INTO "posttable" ("title", "body", "urllink") VALUES ($1, $2, $3)`, [post.title, post.body, post.urllink]
+        )
         res.json(updatepost);
     } catch (err) {
         console.error(err.message);
     }
+});
+
+
+app.get('/auth/authenticate', async(req, res) => {
+    console.log('authentication request has been arrived');
+    const token = req.cookies.jwt;
+    let authenticated = false;
+    try {
+        if (token) {
+            await jwt.verify(token, secret, (err) => {
+                if (err) {
+                    console.log(err.message);
+                    console.log('token is not verified');
+                    res.send({ "authenticated": authenticated });
+                } else {
+                    console.log('author is authenticated');
+                    authenticated = true;
+                    res.send({ "authenticated": authenticated });
+                }
+            })
+        } else {
+            console.log('author is not authinticated');
+            res.send({ "authenticated": authenticated });
+        }
+    } catch (err) {
+        console.error(err.message);
+        res.status(400).send(err.message);
+    }
+});
+
+app.post('/auth/signup', cors(), async(req, res) => {
+    try {
+        console.log("signup request has arrived");
+
+        const data = req.body;
+        const salt = await bcrypt.genSalt(); //  generates the salt, i.e., a random string
+        const bcryptPassword = await bcrypt.hash(data.password, salt) // hash the password and the salt
+        const updateuser = await pool.query(
+            `INSERT INTO "users" ("name", "email", "password") VALUES ($1, $2, $3)`, [data.name, data.email, bcryptPassword]
+        )
+        const users = await pool.query(
+            `SELECT * FROM "users"`
+        )
+        console.log(users.rows)
+        const token = await generateJWT(users.rows[0].id);
+        res
+            .status(201)
+            .cookie('jwt', token, { maxAge: 6000000, httpOnly: true })
+            .json({ user_id: users.rows[0].id })
+            .send;
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+app.post('/auth/login', async(req, res) => {
+    try {
+        console.log("a login request has arrived");
+        const data = req.body;
+        const user = await pool.query(`SELECT * FROM "users"`);
+        let account = null;
+        for (const userElement of user.rows) {
+            if (userElement.email === data.email)
+                account = userElement;
+        }
+        if (account === null) return res.status(401).json({ error: "User is not registered" });
+
+        const validPassword = await bcrypt.compare(data.password, account.password);
+
+        if (!validPassword) return res.status(401).json({ error: "Incorrect password" });
+
+        const token = await generateJWT(user.rows[0].id);
+        res
+            .status(201)
+            .cookie('jwt', token, { maxAge: 6000000, httpOnly: true })
+            .json({ user_id: user.rows[0].id })
+            .send;
+    } catch (error) {
+        res.status(401).json({ error: error.message });
+    }
+});
+
+app.get('/auth/logout', (req, res) => {
+    console.log('delete jwt request arrived');
+    res.status(202).clearCookie('jwt').json({ "Msg": "cookie cleared" }).send
 });
 
 app.listen(port, () => {

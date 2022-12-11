@@ -10,7 +10,7 @@
             <label for="formPassword">Password:</label>
             <input type="password" id="formPassword" class="login-input" placeholder="Password" v-model.trim="v$.password.$model" @input="v$.$touch()"><br>
             <p v-for="error of v$.password.$errors" :key="error.$uid" class="error_message"> {{ error.$message }} </p>
-            <router-link to="/"><input type="submit" :disabled="v$.password.$invalid || v$.email.$invalid" value="Signup" class="button login-input"></router-link>
+            <router-link to="/"><input type="submit" @click="signUp" :disabled="v$.password.$invalid || v$.email.$invalid" value="Signup" class="button login-input"></router-link>
         </form>
     </div>
   </template>
@@ -24,6 +24,26 @@
       export default {
         setup () {
           return { v$: useVuelidate() }
+        },
+        methods: {
+          signUp() {
+
+            const email = this.email.toString();
+            const password = this.password.toString();
+            const name = email.split("@")[0].toString();
+            console.log(name)
+            const request = {
+              method: "POST",
+              headers: {"Content-Type": "application/json"},
+              credentials: 'include',
+              body: JSON.stringify({
+                "name": name,
+                "email": email,
+                "password": password,
+              })
+            }
+            fetch(`http://localhost:3000/auth/signup`, request)
+          }
         },
         data() {
           return {

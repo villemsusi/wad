@@ -31,12 +31,8 @@ export default {
 
   methods: {
 
-    increaseLikes(id) {
-      this.$store.dispatch("increaseLikes", id)
-
-    },
-    ResetLikes() {
-      this.$store.dispatch("ResetLikes")
+    DeleteAll() {
+      this.$store.dispatch("DeleteAll")
     }
   },
   computed: {

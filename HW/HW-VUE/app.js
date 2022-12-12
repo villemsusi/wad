@@ -51,18 +51,29 @@ app.get('/api/posts/:id', cors(), async(req, res) => {
 });
 
 
-app.put('/api/addpost', cors(), async(req, res) => {
+app.post('/api/addpost', cors(), async(req, res) => {
     try {
         const post = req.body;
-        console.log(req.body)
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            `INSERT INTO "posttable" ("title", "body", "urllink") VALUES ($1, $2, $3)`, [post.title, post.body, post.urllink]
+            `INSERT INTO "posttable" ("author", "title", "body") VALUES ($1, $2, $3)`, [post.author, post.title, post.body]
         )
         res.json(updatepost);
     } catch (err) {
         console.error(err.message);
     }
+});
+
+app.get('/api/deleteall', cors(), async(req, res) => {
+   try {
+       console.log("delete all request has arrived");
+       const deletePosts = await pool.query(
+           `DELETE FROM "posttable"`
+       )
+       res.status(200);
+   } catch (err) {
+       console.error(err.message);
+   }
 });
 
 
@@ -84,7 +95,7 @@ app.get('/auth/authenticate', async(req, res) => {
                 }
             })
         } else {
-            console.log('author is not authinticated');
+            console.log('author is not authenticated');
             res.send({ "authenticated": authenticated });
         }
     } catch (err) {

@@ -31,19 +31,18 @@ export default {
       let month = (date.getMonth() + 1).toString();
       let year = date.getFullYear().toString();
       let currentDate = day+'.'+month+'.'+year;
+      let author = "test author"
       const request = {
-        method: "PUT",
+        method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: 'include',
         body: JSON.stringify({
+          "author": author,
           "title": currentDate,
           "body": text,
-          "urllink": null,
         })
       }
       fetch(`http://localhost:3000/api/addpost`, request)
-
-      let button = document.getElementById("postButton")
 
     }
   }

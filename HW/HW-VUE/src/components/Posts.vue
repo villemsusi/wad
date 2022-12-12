@@ -6,16 +6,18 @@
     <div id="right">
       <img src="../assets/house.jpg" id="house" alt="photo of dr. house">
     </div>
-    <div v-for="post in posts" :key="post.ID" id="postArea">
-      <article>
-        <div class="pic-and-date">
-          <img src="src/assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
-          <b> {{ post.Author }} @ {{ post.title }}</b>
-        </div>
-        <p> {{ post.body }}</p>
-      </article>
+    <div v-for="post in posts" :key="post.id" id="postArea">
+      <router-link class="menuLink" :to="'/post/'+post.id">
+        <article>
+          <div class="pic-and-date">
+            <img src="src/assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
+            <b> {{ post.author }} @ {{ post.title }}</b>
+          </div>
+          <p> {{ post.body }}</p>
+        </article>
+      </router-link>
     </div>
-    <button id="deleteButton" @click="DeleteAll">Delete all</button>
+    <button id="deleteButton" @click="deleteAll">Delete all</button>
   </section>
 </template>
 
@@ -36,8 +38,10 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
-    DeleteAll() {
-      this.$store.dispatch("DeleteAll")
+    deleteAll() {
+      fetch(`http://localhost:3000/api/deleteall/`)
+          .catch((err) => console.log(err.message));
+      this.$forceUpdate();
     }
   },
   computed: {

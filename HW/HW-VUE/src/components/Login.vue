@@ -23,8 +23,6 @@
       login() {
         const email = document.getElementById("formEmail").value.toString();
         const password = document.getElementById("formPassword").value.toString();
-        console.log(email)
-        console.log(password)
         fetch("http://localhost:3000/auth/login", {
           method: "POST",
           headers: {

@@ -1,8 +1,12 @@
 <template>
   <div id="aPostArea">
     <div id="aPost-Box">
+      <header>
+        <strong>Post</strong>
+      </header>
+      <label>Body:   </label>
       <div id= "text">
-        <p>{{post.body}}</p><br><br>
+        <p><textarea>{{post.body}}</textarea></p><br><br>
       </div>
       <input id="UpdatePost" @click="updatePost" type="submit" value="Update" class="button">
       <input id="deletePost" @click="deletePost" type="submit" value="Delete" class="button"><br>
@@ -13,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
   name: "A post",
   data() {
@@ -36,7 +41,20 @@ export default {
       }
     },
     async updatePost() {
-
+      app.put('/api/posts/:id', async(req, res) => {
+        try {
+          const {text} = req.body;
+          const title=req.title;
+          const author = req.author;
+          console.log("update request has arrived");
+          const updatepost = await pool.query(
+              "UPDATE posttable SET (author,title, body) = ($2, $3, $4) WHERE body = $1", [author, title, text]
+          );
+          res.json(updatepost);
+        } catch (err) {
+          console.error(err.message);
+        }
+      });
     },
     async deletePost() {
       await fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
@@ -52,10 +70,12 @@ export default {
             console.log(e);
           });
     }
+
   },
+
   mounted() {
     this.fetchPosts()
-  }
+  },
 }
 </script>
 

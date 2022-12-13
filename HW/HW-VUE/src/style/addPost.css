@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+#header{
+    margin-left: 13.5vw;
+}
+
 #add-box {
     padding: 5%;
     margin-top: 3vh;

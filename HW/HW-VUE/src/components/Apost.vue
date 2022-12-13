@@ -1,10 +1,9 @@
 <template>
   <div id="aPostArea">
     <div id="aPost-Box">
-      <header>
+      <header id="header">
         <strong>Post</strong>
       </header>
-      <label>Body: </label>
       <div v-if="!update" id="text">
         <p>{{ post.body }}</p><br><br>
       </div>
@@ -67,6 +66,7 @@ export default {
           });
     },
     async deletePost() {
+      this.$router.push('/')
       await fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
         method: "DELETE",
         headers: {"Content-Type": "application/json"},

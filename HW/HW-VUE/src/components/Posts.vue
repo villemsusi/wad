@@ -39,6 +39,7 @@ export default {
         .catch((err) => console.log(err.message));
     },
     deleteAll() {
+      this.$router.go()
       fetch(`http://localhost:3000/api/deleteall/`)
           .catch((err) => console.log(err.message));
       this.$forceUpdate();

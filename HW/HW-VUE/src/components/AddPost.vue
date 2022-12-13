@@ -42,6 +42,7 @@ export default {
           "body": text,
         })
       }
+      console.log(request)
       fetch(`http://localhost:3000/api/addpost`, request)
 
     }

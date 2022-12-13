@@ -42,7 +42,7 @@ export default {
           "body": text,
         })
       }
-      await fetch(`http://localhost:3000/api/addpost`, request)
+      fetch(`http://localhost:3000/api/addpost`, request)
     }
   }
 

@@ -29,7 +29,7 @@ export default {
           .then((data) => (posts = data))
           .catch((err) => console.log(err.message));
       for (const post of posts) {
-        if (this.$route.params.id === post.id) {
+        if (this.$route.params.id == post.id) {
           this.post = post;
           break;
         }

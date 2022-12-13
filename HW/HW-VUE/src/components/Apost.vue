@@ -4,11 +4,13 @@
       <header>
         <strong>Post</strong>
       </header>
-      <label>Body:   </label>
-      <div id= "text">
-        <p><textarea>{{post.body}}</textarea></p><br><br>
+      <label>Body: </label>
+      <div v-if="!update" id="text">
+        <p>{{ post.body }}</p><br><br>
       </div>
-      <input id="UpdatePost" @click="updatePost" type="submit" value="Update" class="button">
+      <textarea v-else id="textarea" name="updated-text">{{post.body}}</textarea>>
+      <input v-if="!update" id="UpdatePost" @click="updatePost" type="submit" value="Update" class="button">
+      <input v-else id="savePost" @click="savePost" type="submit" value="Save" class="button">
       <input id="deletePost" @click="deletePost" type="submit" value="Delete" class="button"><br>
     </div>
 
@@ -23,6 +25,7 @@ export default {
   data() {
     return {
       post: {},
+      update: false
     }
   },
 
@@ -41,25 +44,32 @@ export default {
       }
     },
     async updatePost() {
-      app.put('/api/posts/:id', async(req, res) => {
-        try {
-          const {text} = req.body;
-          const title=req.title;
-          const author = req.author;
-          console.log("update request has arrived");
-          const updatepost = await pool.query(
-              "UPDATE posttable SET (author,title, body) = ($2, $3, $4) WHERE body = $1", [author, title, text]
-          );
-          res.json(updatepost);
-        } catch (err) {
-          console.error(err.message);
-        }
-      });
+      this.update = true;
+    },
+    async savePost() {
+      this.update = false
+      let newText = document.getElementById("textarea").value
+      this.post.body = newText.toString()
+      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(this.post),
+      })
+          .then((response) => {
+            console.log(response.data);
+            //this.$router.push("/apost/" + this.post.id);
+            // We are using the router instance of this element to navigate to a different URL location
+          })
+          .catch((e) => {
+            console.log(e);
+          });
     },
     async deletePost() {
       await fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
         method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+        headers: {"Content-Type": "application/json"},
       })
           .then((response) => {
             console.log(response);
@@ -70,9 +80,7 @@ export default {
             console.log(e);
           });
     }
-
   },
-
   mounted() {
     this.fetchPosts()
   },

@@ -1,22 +1,22 @@
 <script setup>
-    import Header from '@/components/Header.vue';
-    import AddPost from '@/components/AddPost.vue';
-    import Footer from '@/components/Footer.vue';
+    import Header from '../components/Header.vue';
+    import Login from '../components/Login.vue';
+    import Footer from '../components/Footer.vue';
 </script>
 
 <template>
     <div class="flex-container">
       <Header></Header>
-      <AddPost></AddPost>
+      <Login></Login>
       <Footer></Footer>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'AddpostView',
+        name: 'LoginView',
         components: {
-            AddPost,
+            Login,
             Header,
             Footer
         }

@@ -194,6 +194,6 @@ app.get('/auth/logout', (req, res) => {
     res.status(202).clearCookie('jwt').json({ "Msg": "cookie cleared" }).send
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
     console.log("Server is listening to port " + port)
 });

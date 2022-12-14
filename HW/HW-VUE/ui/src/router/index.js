@@ -1,11 +1,11 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
-import AddpostView from '@/views/AddpostView.vue';
-import LoginView from '@/views/LoginView.vue';
-import SignupView from '@/views/SignupView.vue';
-import ContactView from '@/views/ContactView.vue';
-import auth from "../../auth";
-import APostView from "@/views/APostView.vue";
+import HomeView from '../views/HomeView.vue';
+import AddpostView from '../views/AddpostView.vue';
+import LoginView from '../views/LoginView.vue';
+import SignupView from '../views/SignupView.vue';
+import ContactView from '../views/ContactView.vue';
+import auth from "../auth";
+import APostView from "../views/APostView.vue";
 
 const routes = [{
         path: '/',

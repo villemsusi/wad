@@ -10,7 +10,7 @@
       <router-link class="menuLink" :to="'/post/'+post.id">
         <article>
           <div class="pic-and-date">
-            <img src="src/assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
+            <img src="../assets/defaultUser.png" class="prof-pic" alt="user-profile-picture">
             <b> {{ post.author }} @ {{ post.title }}</b>
           </div>
           <p> {{ post.body }}</p>

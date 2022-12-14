@@ -11,8 +11,7 @@
   </header>
 </template>
 <script>
-  import auth from "../../auth";
-  import { ref } from 'vue';
+  import auth from "../auth";
   export default {
     name: "Header",
     data: function() {

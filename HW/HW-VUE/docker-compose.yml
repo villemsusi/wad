@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+
+  postgres-docker:
+    container_name: postgres-docker
+    image: 'postgres:alpine'
+    environment:
+      POSTGRES_DATABASE: postgres
+      POSTGRES_PASSWORD: K2sn2K2ll3
+      POSTGRES_USER: postgres
+    volumes:
+      - "db_data:/var/lib/postgresql/data"
+    depends_on:
+      - backend
+    ports:
+      - "5432:5432"
+    restart: on-failure
+    networks:
+      - backend
+
+
+  frontend:
+    build: ui/.
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    networks:
+      - backend
+    restart: on-failure
+
+
+  backend:
+    build: api/.
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
+    restart: on-failure
+
+  adminer:
+    image: adminer
+    container_name: adminer-docker
+    depends_on:
+      - postgres-docker
+    ports:
+      - '8080:8080'
+    networks:
+      - backend
+    restart: on-failure
+
+volumes:
+  db_data:
+
+networks:
+  backend:

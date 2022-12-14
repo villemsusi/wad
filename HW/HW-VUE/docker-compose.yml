@@ -11,8 +11,6 @@ services:
       POSTGRES_USER: postgres
     volumes:
       - "db_data:/var/lib/postgresql/data"
-    depends_on:
-      - backend
     ports:
       - "5432:5432"
     restart: on-failure
@@ -38,6 +36,8 @@ services:
     networks:
       - backend
     restart: on-failure
+    depends_on:
+      - postgres-docker
 
   adminer:
     image: adminer

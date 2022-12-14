@@ -10,8 +10,8 @@ ___________________________________________
 <h4>6.1 Credentials are:<br>
 
 System: postgresql<br>
-Server: postgresql-docker<br>
-Username: postgresql<br>
+Server: postgres-docker<br>
+Username: postgres<br>
 Password: K2sn2K2ll3<br>
-Database: postgresql
+Database: postgres
 </h4>
